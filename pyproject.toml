@@ -5,4 +5,4 @@ description = "ONS Digital eQ Lookup Suggestions Data App"
 authors = ["ONSDigital"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
