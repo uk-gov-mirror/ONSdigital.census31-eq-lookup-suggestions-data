@@ -1,6 +1,6 @@
-# eQ Lookup Suggestions Data
+# Census 31 eQ Lookup Suggestions Data
 
-This repository contains TextField suggestion data source files used for versioned json files generation for eq-questionnaire-runner.
+This repository contains TextField suggestion data source files used for versioned json files generation for census31-eq-questionnaire-runner.
 
 ## Source csv files
 

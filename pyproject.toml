@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "eq-lookup-suggestions-data"
+name = "census31-eq-lookup-suggestions-data"
 version = "1.0.0"
-description = "ONS Digital eQ Lookup Suggestions Data App"
+description = "Census 31 eQ Lookup Suggestions Data App"
 authors = ["ONSDigital"]
 
 [tool.poetry.dependencies]
