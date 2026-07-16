@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-import os
 import csv
 import json
+import os
 
 
 def generate_json_files():

@@ -6,14 +6,14 @@ This repository contains TextField suggestion data source files used for version
 
 Source data files are provided by the business as single column csv files.
 
-| Dataset | Description |
-| ------- |-------|
-| countries-of-birth.csv | List of countries for country of birth questions |
-| ethnic-groups.csv | List of ethnic groups |
-| languages.csv | List of languages |
-| national-identities.csv | List of national identities |
-| passport-countries.csv | List of countries for passport questions |
-| religions.csv | List of religions |
+| Dataset                 | Description                                      |
+|-------------------------|--------------------------------------------------|
+| countries-of-birth.csv  | List of countries for country of birth questions |
+| ethnic-groups.csv       | List of ethnic groups                            |
+| languages.csv           | List of languages                                |
+| national-identities.csv | List of national identities                      |
+| passport-countries.csv  | List of countries for passport questions         |
+| religions.csv           | List of religions                                |
 
 These can be manually added/updated in this repository at `./source-data`
 
@@ -38,3 +38,30 @@ json files generation from source csv files is automated on a new version releas
 - json output file root directory `./data`
 
 - two further levels of sub directories are expected corresponding to the `{region}` and `{language_code}` of the suggestions files respectively
+
+## Code Linting/Formatting
+
+We use [Megalinter](https://megalinter.io/latest/mega-linter-runner/) to maintain our code by running various linters over the different file types we have (except Python is done separately). This is run against PRs using the `mega-linter` GitHub action but can also be run locally. To run the linter locally you can run:
+
+```shell
+make megalint
+```
+
+This command will run all the linters enabled in the `mega-linter.yml` config file in the root of the repo against the all the files in the repo and report back any issues. This is run via docker and may take some time to run first time.
+We also have another command which will also run Megalinter locally but this one will attempt to fix any issues it can rather than just report them.
+
+```shell
+make megalint-apply
+```
+
+Python linting and formatting is done separately to run the linting for that run:
+```shell
+make lint-python
+```
+This will run flake8 and black over the python files.
+
+And for formatting:
+```shell
+make format-python
+```
+This will run black and isort over the python files.
