@@ -8,7 +8,7 @@ Source data files are provided by the business as single column csv files.
 
 <!-- prettier-ignore -->
 | Dataset                 | Description                                      |
-| ----------------------- | ------------------------------------------------ |
+|-------------------------|--------------------------------------------------|
 | countries-of-birth.csv  | List of countries for country of birth questions |
 | ethnic-groups.csv       | List of ethnic groups                            |
 | languages.csv           | List of languages                                |
