@@ -6,8 +6,9 @@ This repository contains TextField suggestion data source files used for version
 
 Source data files are provided by the business as single column csv files.
 
+<!-- prettier-ignore -->
 | Dataset                 | Description                                      |
-|-------------------------|--------------------------------------------------|
+| ----------------------- | ------------------------------------------------ |
 | countries-of-birth.csv  | List of countries for country of birth questions |
 | ethnic-groups.csv       | List of ethnic groups                            |
 | languages.csv           | List of languages                                |
@@ -55,13 +56,17 @@ make megalint-apply
 ```
 
 Python linting and formatting is done separately to run the linting for that run:
+
 ```shell
 make lint-python
 ```
+
 This will run flake8 and black over the python files.
 
 And for formatting:
+
 ```shell
 make format-python
 ```
+
 This will run black and isort over the python files.
