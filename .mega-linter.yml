@@ -12,14 +12,24 @@
 ENABLE:
   - ACTION
   - EDITORCONFIG
-  - MAKEFILE
   - MARKDOWN
   - REPOSITORY
   - YAML
 
-FORMATTERS_DISABLE_ERRORS: false
-SHOW_ELAPSED_TIME: true
-FLAVOR_SUGGESTIONS: false
+FORMATTERS_DISABLE_ERRORS: false # Ensures code is actually fixable when using `make megalint-apply`
+SHOW_ELAPSED_TIME: true # Displays execution time for each linter
+FLAVOR_SUGGESTIONS: false # Disables suggestions to use different MegaLinter flavors
+
+DISABLE_LINTERS:
+  - REPOSITORY_GRYPE # No container images in this repo; high runtime cost (49.9s)
+  - REPOSITORY_CHECKOV # Limited IaC footprint here; overlaps workflow security checks for much lower-value spend (11.24s)
+  - REPOSITORY_TRIVY # Vulnerability coverage overlaps osv-scanner with much higher runtime (12.53s vs 1.04s)
+  - REPOSITORY_TRIVY_SBOM # Redundant with trivy/syft SBOM generation and not used as a gating signal
+  - REPOSITORY_TRUFFLEHOG # Overlaps with secretlint; secret scanning kept via faster baseline tools
+  - REPOSITORY_GITLEAKS # Overlaps with secretlint; incremental value is low in this repo
+  - REPOSITORY_KINGFISHER # Overlaps with other secret scanners with higher runtime (7.24s)
+  - REPOSITORY_BETTERLEAKS # Overlaps with secretlint; low incremental detection value
+  - REPOSITORY_SYFT # Generates SBOM artifact but does not gate lint pass/fail for this repo
 
 ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
   - GITHUB_TOKEN
