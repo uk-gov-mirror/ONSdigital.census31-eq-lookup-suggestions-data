@@ -6,7 +6,6 @@ This repository contains TextField suggestion data source files used for version
 
 Source data files are provided by the business as single column csv files.
 
-<!-- prettier-ignore -->
 | Dataset                 | Description                                      |
 |-------------------------|--------------------------------------------------|
 | countries-of-birth.csv  | List of countries for country of birth questions |
